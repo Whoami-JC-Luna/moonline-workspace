@@ -61,6 +61,7 @@ The two services talk over HTTP through internal endpoints (`/internal/**`), aut
 | Persistence | Spring Data JPA + PostgreSQL |
 | Migrations | Flyway |
 | Mapping | MapStruct |
+| Boilerplate reduction | Lombok |
 | Validation | Jakarta Validation |
 | Testing | JUnit5, Mockito, H2 (tests) |
 | Infra | VPS (IONOS), Nginx, Certbot, Cloudflare, UFW, Fail2Ban |
