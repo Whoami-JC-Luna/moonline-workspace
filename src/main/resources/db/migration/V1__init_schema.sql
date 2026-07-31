@@ -8,7 +8,7 @@ CREATE EXTENSION IF NOT EXISTS "pgcrypto";   -- for gen_random_uuid()
 CREATE EXTENSION IF NOT EXISTS "vector";     -- pgvector, for conversation_summary.embedding
 
 -- Enums
-CREATE TYPE user_role AS ENUM ('USER', 'ADMIN');
+CREATE TYPE user_role AS ENUM ('USER');
 CREATE TYPE plan_type AS ENUM ('FREE');
 CREATE TYPE task_status AS ENUM ('PENDING', 'IN_PROGRESS', 'DONE');
 CREATE TYPE task_priority AS ENUM ('LOW', 'MEDIUM', 'HIGH');
@@ -83,7 +83,6 @@ CREATE TABLE conversation (
     assistant_id  UUID NOT NULL REFERENCES assistant(id) ON DELETE CASCADE,
     user_id       UUID NOT NULL REFERENCES app_user(id) ON DELETE CASCADE,
     title         VARCHAR(200),
-    status        VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
     created_at    TIMESTAMP NOT NULL DEFAULT now(),
     updated_at    TIMESTAMP NOT NULL DEFAULT now()
 );
